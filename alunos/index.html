@@ -11,14 +11,41 @@
 <body>
     <h1>Formulario</h1>
     <input type="text" id="nome" placeholder="Digite o nome do Aluno"><br>
-    <input type="number" id="idade" placeholder="Digite o idade Aluno"><br>
-    <select>
-        <option value="" disabled selected hidden></option>
+    <input type="number" id="idade" placeholder="Digite a idade do Aluno"><br>
+    <select id="curso">
+        <option value="" disabled selected hidden>Selecione o Curso</option>
         <option value="JavaScript">JavaScript</option>
         <option value="Python">Python</option>
         <option value="Java">Java</option>
     </select><br>
-    <input type="number" id="nota" placeholder="Digite a nota do Aluno">
+    <input type="number" id="notaFinal" placeholder="Digite a nota do Aluno"><br>
+    <button type="button" id="cadastrarBtn">Cadastrar</button>
+    <input type="hidden" id="alunoId">
+    <h2>Lista de Alunos</h2>
+    <table id="alunosTable">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Idade</th>
+                <th>Curso</th>
+                <th>Nota Final</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody id="alunosTbody">
+        </tbody>
+    </table>
+
+    <h2>Relatórios</h2>
+    <div id="relatorios">
+        <button type="button" onclick="listarAprovados()">Listar Aprovados</button>
+        <button type="button" onclick="calcularMediaNotas()">Média das Notas</button>
+        <button type="button" onclick="calcularMediaIdades()">Média das Idades</button>
+        <button type="button" onclick="listarNomesOrdenados()">Nomes em Ordem Alfabética</button>
+        <button type="button" onclick="quantidadeAlunosPorCurso()">Alunos por Curso</button>
+        <div id="resultadoRelatorio"></div>
+    </div>
+
     <script src="index.js"></script>
 </body>
 
