@@ -1,14 +1,15 @@
-FROM node:18-alpine # Uma imagem Node.js mais leve
+FROM node:18-alpine 
 
 WORKDIR /app
 
+# Copy everything from the current directory to /app in the container
 COPY . /app
 
-# Instala o http-server globalmente dentro do container
+# Install http-server globally
 RUN npm install -g http-server
 
-# Expõe a porta 80 para indicar que o servidor web estará rodando nela
+# Expose port 80 (inside container)
 EXPOSE 80
 
-# Define o comando para iniciar o servidor web quando o container for iniciado
-CMD ["http-server", "-p", "80"]
+# Start the server and serve files from /app
+CMD ["http-server", "/app", "-p", "80"]
