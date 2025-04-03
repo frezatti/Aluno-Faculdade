@@ -1,28 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Formulario Arquivo</title>
-    <link href="css/style.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciamento de Alunos</title>
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            padding: 8px;
+        }
+    </style>
 </head>
 
 <body>
-    <h1>Formulario</h1>
-    <input type="text" id="nome" placeholder="Digite o nome do Aluno"><br>
-    <input type="number" id="idade" placeholder="Digite a idade do Aluno"><br>
+    <h1>Cadastro de Alunos</h1>
+    <input type="text" id="nome" placeholder="Nome do aluno">
+    <br>
+    <input type="number" id="idade" placeholder="Idade"><br>
     <select id="curso">
-        <option value="" disabled selected hidden>Selecione o Curso</option>
+        <option value="" disabled selected hidden></option>
         <option value="JavaScript">JavaScript</option>
         <option value="Python">Python</option>
         <option value="Java">Java</option>
-    </select><br>
-    <input type="number" id="notaFinal" placeholder="Digite a nota do Aluno"><br>
-    <button type="button" id="cadastrarBtn">Cadastrar</button>
-    <input type="hidden" id="alunoId">
+    </select>
+    <br>
+    <input type="number" id="nota" placeholder="Nota Final">
+    <br>
+    <button onclick="cadastrarAluno()">Cadastrar</button>
+
     <h2>Lista de Alunos</h2>
-    <table id="alunosTable">
+    <table>
         <thead>
             <tr>
                 <th>Nome</th>
@@ -32,19 +43,8 @@
                 <th>Ações</th>
             </tr>
         </thead>
-        <tbody id="alunosTbody">
-        </tbody>
+        <tbody id="tabelaAlunos"></tbody>
     </table>
-
-    <h2>Relatórios</h2>
-    <div id="relatorios">
-        <button type="button" onclick="listarAprovados()">Listar Aprovados</button>
-        <button type="button" onclick="calcularMediaNotas()">Média das Notas</button>
-        <button type="button" onclick="calcularMediaIdades()">Média das Idades</button>
-        <button type="button" onclick="listarNomesOrdenados()">Nomes em Ordem Alfabética</button>
-        <button type="button" onclick="quantidadeAlunosPorCurso()">Alunos por Curso</button>
-        <div id="resultadoRelatorio"></div>
-    </div>
 
     <script src="index.js"></script>
 </body>
